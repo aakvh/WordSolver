@@ -6,6 +6,10 @@ import sys
 with open('wordlist', 'rb') as f:
     lst = pickle.load(f)
 
+if len(sys.argv) != 2:
+    print('Wrong input!!')
+    sys.exit()
+
 char = sys.argv[1].upper().split(' ')
 
 def wordsolver():
