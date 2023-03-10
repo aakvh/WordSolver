@@ -10,14 +10,15 @@ if len(sys.argv) != 2:
     print('Wrong input!!')
     sys.exit()
 
-char = sys.argv[1].upper().split(' ')
+char = set(sys.argv[1].upper())
 
 def wordsolver():
     #char = input('give me the list;\n')
     matched = []
     for i in lst:
         if all([c in i for c in char]):
-            matched.append(i)
+            if set(i).issubset(char):
+                matched.append(i)
     for i in matched:
         print(i.capitalize())
 
